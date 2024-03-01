@@ -27,11 +27,11 @@ public class JWTUtil {
         jwtBuilder.claim("role", role);
 
         jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
-        jwtBuilder.issuer("YouTube");
+        jwtBuilder.issuer("UzCard");
         return jwtBuilder.compact();
     }
 
-    public static String encode(String email, ProfileRole role) {
+    public static String encode(String username, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
 
@@ -40,11 +40,11 @@ public class JWTUtil {
 
         jwtBuilder.signWith(secretKeySpec);
 
-        jwtBuilder.claim("email", email);
+        jwtBuilder.claim("username", username);
         jwtBuilder.claim("role", role);
 
         jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
-        jwtBuilder.issuer("YouTube");
+        jwtBuilder.issuer("UzCard");
         return jwtBuilder.compact();
     }
 
@@ -56,9 +56,10 @@ public class JWTUtil {
         jwtBuilder.signWith(secretKeySpec);
         jwtBuilder.claim("id", profileId);
         jwtBuilder.expiration(new Date(System.currentTimeMillis() + (emailTokenLiveTime)));
-        jwtBuilder.issuer("YouTube");
+        jwtBuilder.issuer("UzCard");
         return jwtBuilder.compact();
     }
+
     public static JwtDTO decode(String token) {
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
@@ -88,9 +89,9 @@ public class JWTUtil {
         Jws<Claims> jws = jwtParser.parseSignedClaims(token);
         Claims claims = jws.getPayload();
 
-        String email = (String) claims.get("email");
+        String username = (String) claims.get("username");
         String role = (String) claims.get("role");
         ProfileRole profileRole = ProfileRole.valueOf(role);
-        return new JwtDTO(email, profileRole);
+        return new JwtDTO(username, profileRole);
     }
 }

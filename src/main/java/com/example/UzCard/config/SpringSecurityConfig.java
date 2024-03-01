@@ -48,8 +48,6 @@ public class SpringSecurityConfig {
         http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
             authorizationManagerRequestMatcherRegistry
                     .requestMatchers(AUTH_WHITELIST).permitAll()
-                    .requestMatchers("auth/registration").permitAll()
-                    .requestMatchers("auth/verification/email/*").permitAll()
                     .requestMatchers("auth/login").permitAll()
                     .anyRequest()
                     .authenticated();

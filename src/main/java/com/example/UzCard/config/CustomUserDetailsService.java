@@ -19,7 +19,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // login/email
+        // login/username
         Optional<ProfileEntity> optional = profileRepository.findByUsername(username);
         if (optional.isEmpty()) {
             throw new AppBadException("Bad Credentials. Mazgi");
