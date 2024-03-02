@@ -11,3 +11,22 @@ Content-Type: application/json
   "username": "paypal",
   "password": "1234"
 }
+
+### update company
+POST localhost:8081/company/update/3f65c238-3390-4e69-8a5b-33edadd3e8de
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
+Content-Type: application/json
+
+{
+  "name": "Paypal",
+  "address": "Tashkent",
+  "contact": "9999",
+  "visible": true,
+  "role": "ROLE_PAYMENT",
+  "username": "paypal",
+  "password": "1234"
+}
+
+### delete company(visible false)
+PUT localhost:8081/company/delete/3f65c238-3390-4e69-8a5b-33edadd3e8de
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
