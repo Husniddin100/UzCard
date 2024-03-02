@@ -6,9 +6,12 @@ import com.example.UzCard.entity.CompanyEntity;
 import com.example.UzCard.exp.AppBadException;
 import com.example.UzCard.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -66,5 +69,36 @@ public class CompanyService {
             throw new AppBadException("error deleting");
         }
         return true;
+    }
+
+    public PageImpl pagination(Integer page, Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "createdDate");
+
+        Pageable paging = PageRequest.of(page - 1, size, sort);
+        Page<CompanyEntity> channelPage = companyRepository.findAll(paging);
+
+        List<CompanyEntity> entityList = channelPage.getContent();
+        Long totalElements = channelPage.getTotalElements();
+
+        List<CompanyDTO> dtoList = new LinkedList<>();
+        for (CompanyEntity entity : entityList) {
+            dtoList.add(toDTO(entity));
+        }
+        return new PageImpl<>(dtoList, paging, totalElements);
+    }
+
+    private CompanyDTO toDTO(CompanyEntity entity) {
+        CompanyDTO dto = new CompanyDTO();
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setAddress(entity.getAddress());
+        dto.setContact(entity.getContact());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setVisible(entity.getVisible());
+        dto.setRole(entity.getRole());
+        dto.setCode(entity.getCode());
+        dto.setUsername(entity.getUsername());
+        dto.setPassword(entity.getPassword());
+        return dto;
     }
 }

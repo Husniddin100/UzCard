@@ -5,8 +5,9 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface CompanyRepository extends CrudRepository<CompanyEntity, String> {
+public interface CompanyRepository extends CrudRepository<CompanyEntity, String>, PagingAndSortingRepository<CompanyEntity,String> {
     @Transactional
     @Modifying
     @Query("update CompanyEntity set visible=false where id=?1")

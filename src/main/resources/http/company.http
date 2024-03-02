@@ -30,3 +30,7 @@ Content-Type: application/json
 ### delete company(visible false)
 PUT localhost:8081/company/delete/3f65c238-3390-4e69-8a5b-33edadd3e8de
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
+
+### pagination
+GET localhost:8081/company/pagination?page=1&size=10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
