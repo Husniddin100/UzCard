@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "card")
 public class CardEntity {
     @Id
-    @GenericGenerator(name = "card_uuid", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column
     private Integer number;

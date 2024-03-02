@@ -28,6 +28,7 @@ public class CompanyService {
         companyRepository.save(entity);
 
         dto.setId(entity.getId());
+        dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
