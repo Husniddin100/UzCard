@@ -1,2 +1,2 @@
-/*insert into profile(name, surname, username, password, status, role, created_date)
-values ('admin', 'adminjonov', 'admin', '1234', 'ACTIVE', 'ROLE_ADMIN', current_timestamp);*/
+insert into profile(id,name, surname, username, password, status, role, created_date)
+values (1,'admin', 'adminjonov', 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'ACTIVE', 'ROLE_ADMIN', current_timestamp);

@@ -2,6 +2,7 @@ package com.example.UzCard.Util;
 
 
 import com.example.UzCard.dto.JwtDTO;
+import com.example.UzCard.enums.CompanyRole;
 import com.example.UzCard.enums.ProfileRole;
 import io.jsonwebtoken.*;
 
@@ -32,6 +33,22 @@ public class JWTUtil {
     }
 
     public static String encode(String username, ProfileRole role) {
+        JwtBuilder jwtBuilder = Jwts.builder();
+        jwtBuilder.issuedAt(new Date());
+
+        SignatureAlgorithm sa = SignatureAlgorithm.HS512;
+        SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
+
+        jwtBuilder.signWith(secretKeySpec);
+
+        jwtBuilder.claim("username", username);
+        jwtBuilder.claim("role", role);
+
+        jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
+        jwtBuilder.issuer("UzCard");
+        return jwtBuilder.compact();
+    }
+    public static String companyEncode(String username, CompanyRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
 
