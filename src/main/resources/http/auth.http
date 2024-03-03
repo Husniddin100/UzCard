@@ -1,8 +1,17 @@
-### login user
+### login profile
 POST localhost:8081/auth/login
 Content-Type:application/json
 
 {
   "username": "admin",
+  "password": "1234"
+}
+
+### login company
+POST localhost:8081/auth/company/login
+Content-Type:application/json
+
+{
+  "username": "paypal",
   "password": "1234"
 }
