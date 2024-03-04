@@ -50,4 +50,13 @@ public class ProfileService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
+
+    public Boolean changeStatus(String id, ProfileStatus status) {
+        Optional<ProfileEntity> optional = profileRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new AppBadException("profile not found");
+        }
+        profileRepository.changeProfileStatus(id, status);
+        return true;
+    }
 }

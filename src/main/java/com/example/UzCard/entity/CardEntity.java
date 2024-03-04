@@ -28,7 +28,7 @@ public class CardEntity {
     @Column
     private LocalDateTime createdDate;
     @Column
-    private Double balance;
+    private Long balance;
     @Column
     private String clientId;
     // join client

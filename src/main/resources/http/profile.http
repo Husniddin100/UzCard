@@ -1,6 +1,6 @@
 ### create profile
 POST localhost:8081/profile/create
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDk1NTkxMTIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTY0NTUxMiwiaXNzIjoiVXpDYXJkIn0.N6RHeyh8mxbSenUF0Njvd2t3PlHYmHLs96DHLYCof7TZilFPH3RrkaaB5EUfCy5Q4w3Muw0xC4BW8p4eKJQapA
 Content-Type: application/json
 
 {
@@ -10,3 +10,8 @@ Content-Type: application/json
   "username": "moder",
   "password": "1234"
 }
+
+### change status
+PUT localhost:8081/profile/change_status/9d1b888e-306e-4f90-b3e3-d65b80804f80/BLOCK
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDk1NTkxMTIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTY0NTUxMiwiaXNzIjoiVXpDYXJkIn0.N6RHeyh8mxbSenUF0Njvd2t3PlHYmHLs96DHLYCof7TZilFPH3RrkaaB5EUfCy5Q4w3Muw0xC4BW8p4eKJQapA
+

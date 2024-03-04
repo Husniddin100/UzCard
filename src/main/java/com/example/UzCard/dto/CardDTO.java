@@ -15,7 +15,7 @@ public class CardDTO {
     private String phone;
     private CardStatus status;
     private LocalDateTime createdDate;
-    private Double balance;
+    private Long balance;
     private String clientId;
     private String companyId;
 
