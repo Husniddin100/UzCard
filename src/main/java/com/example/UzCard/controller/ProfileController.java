@@ -23,6 +23,6 @@ public class ProfileController {
         return ResponseEntity.ok(profileService.update(id,dto));
     }
 
-    //gg
+
 
 }
