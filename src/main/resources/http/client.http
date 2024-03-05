@@ -1,0 +1,12 @@
+### client create
+POST localhost:8081/client/create
+Content-Type: application/json
+
+{
+  "name": "Ali",
+  "surname": "Aliyev",
+  "middle_name": "Ali ugli",
+  "phone": "1234",
+  "passport_number": "1",
+  "password_series": "2"
+}

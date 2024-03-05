@@ -16,4 +16,6 @@ public interface CompanyRepository extends CrudRepository<CompanyEntity, String>
     int updateVisible(String id);
 
     Optional<CompanyEntity> findByUsernameAndPassword(String username, String password);
+
+    Optional<CompanyEntity> findByUsername(String username);
 }

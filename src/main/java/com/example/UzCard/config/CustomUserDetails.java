@@ -1,6 +1,7 @@
 package com.example.UzCard.config;
 
 
+import com.example.UzCard.enums.CompanyRole;
 import com.example.UzCard.enums.ProfileRole;
 import com.example.UzCard.enums.ProfileStatus;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,7 +26,6 @@ public class CustomUserDetails implements UserDetails {
         this.status = status;
         this.role = role;
     }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> list = new LinkedList<>();

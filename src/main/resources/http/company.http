@@ -1,14 +1,14 @@
 ### create company
 POST localhost:8081/company/create
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDkzNjY0NDksInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTQ1Mjg0OSwiaXNzIjoiVXpDYXJkIn0.3XFcTJPrsk3tuKfXRWa4nK-uwF5uqRl9Zs0Qo19XHARSVjvOwWYvbAWur2HNVd6HsWBF9dMrRPV2iz-Z8yLC8A
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDk2MzMwMTQsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTcwOTcxOTQxNCwiaXNzIjoiVXpDYXJkIn0.0oL326CDjhrnyJEuUnLA0QqkEL2VENAUbPIf5c7pZrJq2bDhfouHg7XnFvnWL9Qm51-YcTy6rdyl13M83lEotw
 Content-Type: application/json
 
 {
-  "name": "Payme",
+  "name": "Anorbank",
   "address": "Tashkent",
   "contact": "9999",
-  "role": "ROLE_PAYMENT",
-  "username": "paypal",
+  "role": "ROLE_BANK",
+  "username": "anor",
   "password": "1234"
 }
 

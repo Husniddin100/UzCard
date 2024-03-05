@@ -12,6 +12,6 @@ POST localhost:8081/auth/company/login
 Content-Type:application/json
 
 {
-  "username": "paypal",
+  "username": "anor",
   "password": "1234"
 }
