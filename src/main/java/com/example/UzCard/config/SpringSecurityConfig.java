@@ -50,6 +50,7 @@ public class SpringSecurityConfig {
                     .requestMatchers(AUTH_WHITELIST).permitAll()
                     .requestMatchers("auth/login").permitAll()
                     .requestMatchers("auth/company/login").permitAll()
+                    .requestMatchers("client/create").permitAll()
                     .anyRequest()
                     .authenticated();
         });
