@@ -4,6 +4,7 @@ import com.example.UzCard.dto.ProfileDTO;
 import com.example.UzCard.enums.ProfileStatus;
 import com.example.UzCard.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,11 @@ public class ProfileController {
     @PutMapping("/change_status/{id}/{status}")
     public ResponseEntity<Boolean> changeStatus(@PathVariable String id, @PathVariable ProfileStatus status) {
         return ResponseEntity.ok(profileService.changeStatus(id, status));
-
+    }
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/pagination")
+    public ResponseEntity<PageImpl> pagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                                               @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        return ResponseEntity.ok(profileService.pagination(page, size));
     }
 }

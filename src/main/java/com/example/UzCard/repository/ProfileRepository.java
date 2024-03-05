@@ -6,10 +6,11 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.Optional;
 
-public interface ProfileRepository extends CrudRepository<ProfileEntity, String> {
+public interface ProfileRepository extends CrudRepository<ProfileEntity, String>, PagingAndSortingRepository<ProfileEntity, String> {
     @Query("from ProfileEntity where username=?1")
     Optional<ProfileEntity> findByUsername(String username);
 
