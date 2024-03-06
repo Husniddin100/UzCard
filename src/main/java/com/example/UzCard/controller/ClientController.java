@@ -21,6 +21,12 @@ public class ClientController {
     @PreAuthorize("hasRole('BANK')")
     @PostMapping("/update/{id}")
     public ResponseEntity<ClientDTO> update(@PathVariable String id, @RequestBody ClientDTO dto) {
-        return ResponseEntity.ok(clientService.update(id,dto));
+        return ResponseEntity.ok(clientService.update(id, dto));
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<ClientDTO>getById(@PathVariable String id){
+        return ResponseEntity.ok(clientService.getById(id));
     }
 }

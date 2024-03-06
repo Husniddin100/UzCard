@@ -45,4 +45,30 @@ public class ClientService {
         clientRepository.save(entity);
         return dto;
     }
+
+    public ClientEntity findById(String id) {
+        Optional<ClientEntity> optional = clientRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new AppBadException("profile not found ");
+        }
+        return optional.get();
+    }
+
+    public ClientDTO getById(String id) {
+        ClientEntity entity = findById(id);
+        return toDTO(entity);
+    }
+
+
+    public ClientDTO toDTO(ClientEntity entity) {
+        ClientDTO dto = new ClientDTO();
+        dto.setId(entity.getId());
+        dto.setStatus(entity.getStatus());
+        dto.setName(entity.getName());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setMiddle_name(entity.getMiddle_name());
+        dto.setPassport_number(entity.getPassport_number());
+        dto.setPassword_series(entity.getPassword_series());
+        return dto;
+    }
 }
