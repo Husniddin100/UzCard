@@ -57,4 +57,29 @@ public class CardService {
         }
         return true;
     }
+
+    public CardDTO getCardById(String id) {
+        Optional<CardEntity> optional = cardRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new AppBadException("card not found");
+        }
+        Optional<CardEntity> findByCardRole = cardRepository.getCardById(id);
+        findByCardRole.ifPresent(this::toDTO);
+        /// not end
+        return null;
+    }
+
+    private CardDTO toDTO(CardEntity entity) {
+        CardDTO dto = new CardDTO();
+        dto.setId(entity.getId());
+        dto.setNumber(entity.getNumber());
+        dto.setExpired_date(entity.getExpireDate());
+        dto.setBalance(entity.getBalance());
+        dto.setPhone(entity.getPhone());
+        dto.setStatus(entity.getStatus());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setClientId(entity.getClientId());
+        dto.setCompanyId(entity.getCompanyId());
+        return dto;
+    }
 }

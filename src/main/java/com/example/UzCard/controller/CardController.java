@@ -27,4 +27,10 @@ public class CardController {
     public ResponseEntity<Boolean> assignPhone(@PathVariable String id, @PathVariable String phone) {
         return ResponseEntity.ok(cardService.assignPhone(id, phone));
     }
+
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<CardDTO> getCardById(@PathVariable String id) {
+        return ResponseEntity.ok(cardService.getCardById(id));
+    }
+
 }
