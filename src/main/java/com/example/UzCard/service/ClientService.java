@@ -25,6 +25,7 @@ public class ClientService {
         entity.setStatus(ClientStatus.ACTIVE);
         entity.setPassword_series(dto.getPassword_series());
         entity.setPassport_number(dto.getPassport_number());
+        clientRepository.save(entity);
 
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
