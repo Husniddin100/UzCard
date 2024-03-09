@@ -19,7 +19,7 @@ public class CardEntity {
     @Column
     private Integer number;
     @Column
-    private String expired_date;
+    private String expireDate;
     @Column
     private String phone;
     @Column
@@ -29,10 +29,14 @@ public class CardEntity {
     private LocalDateTime createdDate;
     @Column
     private Long balance;
-    @Column
+    @Column(name = "client_id")
     private String clientId;
-    // join client
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "client_id",updatable = false, insertable = false)
+    private ClientEntity client;
+    @Column(name = "company_id")
     private String companyId;
-    //join company
+    @ManyToOne
+    @JoinColumn(name = "company_id",insertable = false,updatable = false)
+    private CompanyEntity company;
 }

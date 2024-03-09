@@ -23,10 +23,12 @@ public class ClientController {
     public ResponseEntity<ClientDTO> update(@PathVariable String id, @RequestBody ClientDTO dto) {
         return ResponseEntity.ok(clientService.update(id, dto));
     }
+    //filter pagination {}
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/getById/{id}")
-    public ResponseEntity<ClientDTO>getById(@PathVariable String id){
+    public ResponseEntity<ClientDTO> getById(@PathVariable String id) {
         return ResponseEntity.ok(clientService.getById(id));
     }
+    //get by profile id (bank only own users)
 }
