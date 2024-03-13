@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/transfer")
 public class TransferController {
     @Autowired
-    private TransferService transferSerivce;
+    private TransferService transferService;
 }

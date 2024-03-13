@@ -17,6 +17,6 @@ public class TransactionDTO {
     private String transferId;
     private LocalDateTime created_date;
     private TransactionStatus transactionStatus;
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
     private TransactionStatus status;
 }
