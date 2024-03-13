@@ -29,14 +29,14 @@ public class CardEntity {
     private LocalDateTime createdDate;
     @Column
     private Long balance;
-    @Column
+    @Column(name = "client_id")
     private String clientId;
     @ManyToOne
-    @JoinColumn(updatable = false, insertable = false)
+    @JoinColumn(name = "client_id",updatable = false, insertable = false)
     private ClientEntity client;
-    @Column
+    @Column(name = "company_id")
     private String companyId;
     @ManyToOne
-    @JoinColumn(insertable = false,updatable = false)
+    @JoinColumn(name = "company_id",insertable = false,updatable = false)
     private CompanyEntity company;
 }

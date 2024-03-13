@@ -36,4 +36,13 @@ public class TransferEntity {
     private TransferStatus transferStatus;
     @Column
     private String companyId;*/
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    private TransferStatus status;
+    @Column(name = "company_id")
+    private String companyId;
+    @ManyToOne
+    @JoinColumn(name = "company_id", insertable = false, updatable = false)
+    private CompanyEntity company;
 }
