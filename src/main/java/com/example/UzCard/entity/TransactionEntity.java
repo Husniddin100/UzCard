@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
 @Getter
 @Setter
 @Entity
@@ -19,7 +20,7 @@ public class TransactionEntity {
     @Column
     private String cardId;
     @OneToOne
-    @JoinColumn(name = "card_id", insertable = false, updatable = false)
+    @JoinColumn(name = "card_id",insertable = false, updatable = false)
     private CardEntity card;
     @Column
     private Long amount;
@@ -36,4 +37,14 @@ public class TransactionEntity {
     @Column
     @Enumerated(EnumType.STRING)
     private TransactionStatus transactionStatus;
+    // soon
+    /*@Column
+    private String transferId;
+    @OneToMany
+    @JoinColumn(insertable = false,updatable = false)*/
+    @Column
+    private LocalDate createdDate;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus status;
 }
