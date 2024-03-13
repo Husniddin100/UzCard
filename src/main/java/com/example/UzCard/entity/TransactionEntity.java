@@ -6,7 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -16,7 +17,7 @@ public class TransactionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(name = "card_id")
+    @Column
     private String cardId;
     @OneToOne
     @JoinColumn(name = "card_id",insertable = false, updatable = false)
@@ -26,6 +27,16 @@ public class TransactionEntity {
     @Column
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
+    @Column
+    private String transferId;
+    @ManyToOne
+    @JoinColumn(name = "transfer_id")
+    private TransferEntity transfer;
+    @Column
+    private LocalDateTime created_date;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus transactionStatus;
     // soon
     /*@Column
     private String transferId;

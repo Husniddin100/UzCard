@@ -5,7 +5,7 @@ import com.example.UzCard.enums.TransactionType;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,7 +15,8 @@ public class TransactionDTO {
     private Long amount;
     private TransactionType transactionType;
     private String transferId;
+    private LocalDateTime created_date;
+    private TransactionStatus transactionStatus;
     private LocalDate createdDate;
     private TransactionStatus status;
-
 }
