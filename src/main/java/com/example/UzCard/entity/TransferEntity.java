@@ -15,8 +15,11 @@ public class TransferEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column
+   /* @Column
     private String fromCardId;
+    @OneToOne
+    @JoinColumn(insertable = false, updatable = false)
+    private CardEntity card;
     @Column
     private String toCardId;
     @Column
@@ -29,6 +32,11 @@ public class TransferEntity {
     private Long servicePercentage;
     @Column
     private LocalDateTime createdDate;
+    @Column
+    private TransferStatus transferStatus;
+    @Column
+    private String companyId;*/
+
     @Enumerated(EnumType.STRING)
     @Column
     private TransferStatus status;

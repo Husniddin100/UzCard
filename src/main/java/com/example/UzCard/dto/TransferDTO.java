@@ -17,6 +17,6 @@ public class TransferDTO {
     private Long serviceAmount;
     private Long servicePercentage;
     private LocalDateTime createdDate;
-    private TransferStatus status;
+    private TransferStatus transferStatus;
     private String companyId;
 }
