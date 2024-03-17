@@ -17,7 +17,7 @@ public class TransactionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column
+    @Column(name = "card_id")
     private String cardId;
     @OneToOne
     @JoinColumn(name = "card_id",insertable = false, updatable = false)
@@ -27,13 +27,11 @@ public class TransactionEntity {
     @Column
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
-    @Column
+    @Column(name = "transfer_id")
     private String transferId;
     @ManyToOne
-    @JoinColumn(name = "transfer_id")
+    @JoinColumn(name = "transfer_id",insertable = false,updatable = false)
     private TransferEntity transfer;
-    @Column
-    private LocalDateTime created_date;
     @Column
     @Enumerated(EnumType.STRING)
     private TransactionStatus transactionStatus;

@@ -32,5 +32,7 @@ public class CardController {
     public ResponseEntity<CardDTO> getCardById(@PathVariable String id) {
         return ResponseEntity.ok(cardService.getCardById(id));
     }
-
+   /* @GetMapping("/getCardListByClientId")
+    public ResponseEntity<CardDTO>getCardListByClientId(){
+    }*/
 }
